@@ -12,18 +12,14 @@ namespace LogicalPrograms
         {
             Console.WriteLine("Enter the value of n");
             int n=Convert.ToInt32(Console.ReadLine());
-            int countFactors = 0;
-            for(int i=1;i<=n;i++)
+            int reverseNo = 0;
+             while(n>0)
             {
-                if(n%i==0)
-                {
-                    countFactors++;
-                }
+                int d = n % 10;
+                reverseNo = reverseNo * 10 + d;
+                n = n / 10;
             }
-            if (countFactors==2)
-                Console.WriteLine("Prime No");
-            else
-                Console.WriteLine("Not Prime No");
+                Console.WriteLine(reverseNo);
         }
     }
 }
